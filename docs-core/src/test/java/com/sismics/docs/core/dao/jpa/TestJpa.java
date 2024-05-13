@@ -36,4 +36,25 @@ public class TestJpa extends BaseTransactionalTest {
         // Authenticate using the database
         Assert.assertNotNull(new InternalAuthenticationHandler().authenticate("username", "12345678"));
     }
+
+    @Test
+    public void testDeleteUser() throws Exception {
+        User user = new User();
+        UserDao userDao = new UserDao();
+        user.setUsername("deleteTestUser");
+        user.setPassword("passwordToDelete");
+        user.setEmail("deleteTest@docs.com");
+        user.setRoleId("user");
+        user.setStorageQuota(20L);
+        String userId = userDao.create(user, "creatorId");
+
+        TransactionUtil.commit();
+        User createdUser = userDao.getById(userId);
+        Assert.assertNotNull("The user should exist before deletion", createdUser);
+        userDao.delete(createdUser.getUsername(), "deleterId");
+        TransactionUtil.commit();
+        User deletedUser = userDao.getById(userId);
+        Assert.assertNotNull("The user should not be null even after deletion", deletedUser);
+        Assert.assertNotNull("The deleteDate should be set after deletion", deletedUser.getDeleteDate());
+    }
 }

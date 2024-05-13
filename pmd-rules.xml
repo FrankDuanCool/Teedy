@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Custom Rules"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+        Custom PMD ruleset.
+    </description>
+
+<!--    <rule ref="rulesets/java/unusedcode.xml/UnusedPrivateField">-->
+<!--        <priority>3</priority>-->
+<!--    </rule>-->
+
+<!--    <rule ref="rulesets/java/unnecessary.xml/UnnecessaryFinalModifier">-->
+<!--        <priority>2</priority>-->
+<!--    </rule>-->
+
+    <!-- Lines of Code (LoC) -->
+<!--    <rule ref="category/velocity/design.xml/ExcessiveTemplateLength">-->
+<!--        <properties>-->
+<!--            <property name="minimum" value="1000" />-->
+<!--        </properties>-->
+<!--    </rule>-->
+
+    <!-- Cyclomatic Complexity (CC) -->
+<!--    <rule ref="category/metrics.xml/CyclomaticComplexity">-->
+<!--        <properties>-->
+<!--            <property name="maximum" value="10"/> &lt;!&ndash; Define your maximum CC threshold here &ndash;&gt;-->
+<!--        </properties>-->
+<!--    </rule>-->
+
+    <!-- Weighted Methods per Class (WMC) -->
+<!--    <rule ref="category/metrics.xml/ClassDataAbstractionCoupling">-->
+<!--        <properties>-->
+<!--            <property name="minimum" value="0"/>-->
+<!--            <property name="maximum" value="10"/> &lt;!&ndash; Define your maximum WMC threshold here &ndash;&gt;-->
+<!--        </properties>-->
+<!--    </rule>-->
+
+    <!-- Coupling Between Objects (CBO) -->
+<!--    <rule ref="category/design.xml/CouplingBetweenObjects">-->
+<!--        <properties>-->
+<!--            <property name="minimum" value="0"/>-->
+<!--            <property name="maximum" value="10"/> &lt;!&ndash; Define your maximum CBO threshold here &ndash;&gt;-->
+<!--        </properties>-->
+<!--    </rule>-->
+
+    <!-- Lack of Cohesion in Methods (LCOM) -->
+<!--    <rule ref="category/java/design.xml/LackOfCohesionOfMethods">-->
+<!--        <properties>-->
+<!--            <property name="minimum" value="0"/>-->
+<!--            <property name="maximum" value="5"/> &lt;!&ndash; Define your maximum LCOM threshold here &ndash;&gt;-->
+<!--        </properties>-->
+<!--    </rule>-->
+
+    <rule ref="category/java/design.xml/NcssCount">
+        <properties>
+            <property name="methodReportLevel" value="60" />
+            <property name="classReportLevel" value="1500" />
+            <property name="ncssOptions" value="" />
+        </properties>
+    </rule>
+
+    <rule ref="category/java/design.xml/CyclomaticComplexity">
+        <properties>
+            <property name="classReportLevel" value="80" />
+            <property name="methodReportLevel" value="10" />
+            <property name="cycloOptions" value="" />
+        </properties>
+    </rule>
+
+    <rule ref="category/java/design.xml/TooManyMethods">
+        <properties>
+            <property name="maxmethods" value="10" />
+        </properties>
+    </rule>
+
+    <rule ref="category/java/design.xml/CouplingBetweenObjects">
+        <properties>
+            <property name="threshold" value="20" />
+        </properties>
+    </rule>
+
+    <rule ref="category/java/bestpractices.xml/UnusedPrivateMethod">
+        <properties>
+            <property name="ignoredAnnotations" value="java.lang.Deprecated" />
+        </properties>
+    </rule>
+
+</ruleset>
