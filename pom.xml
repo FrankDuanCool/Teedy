@@ -175,7 +175,6 @@
         </executions>
       </plugin>
 
-
     </plugins>
   </build>
         
@@ -559,6 +558,13 @@
         <groupId>com.levigo.jbig2</groupId>
         <artifactId>levigo-jbig2-imageio</artifactId>
         <version>${com.levigo.jbig2.levigo-jbig2-imageio.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>6.8.8</version>
+        <scope>test</scope>
       </dependency>
 
     </dependencies>
